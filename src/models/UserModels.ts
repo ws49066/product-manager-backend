@@ -5,7 +5,7 @@ interface IUser {
     password: string;
     createdAt?: Date;
     updatedAt?: Date;
-    rules: string
+    role: string
 }
 
 const UserSchema = new Schema<IUser>({
@@ -13,7 +13,7 @@ const UserSchema = new Schema<IUser>({
     password: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
-    rules: { type: String, required: true , enum: ['user', 'admin'] }
+    role: { type: String, required: true , enum: ['user', 'admin'] }
 })
 
 const UserModel = model<IUser>('Users', UserSchema);

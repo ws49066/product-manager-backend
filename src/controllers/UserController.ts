@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 class UserController{
     // Here you would typically handle user registration logic, such as saving the user to a database.
-    async registerUser(req: Request, res: Response) {
+    static async registerUser(req: Request, res: Response) {
         const User:IUser = req.body;
 
          try {
