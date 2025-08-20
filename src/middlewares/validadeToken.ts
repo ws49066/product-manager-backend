@@ -10,6 +10,7 @@ interface ITokenPayload {
 
 function validadeToken(req: Request, res: Response, next: NextFunction) {
     const authHeader = req.headers?.authorization
+    
     const {publicKey} = authConfig;
     if (!authHeader) {
         return res.status(401).json({ message: "No token provided" });

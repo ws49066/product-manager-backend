@@ -49,9 +49,14 @@ async function addProduct(req:Request, res:Response){
 }
 
 async function getProduct(req: Request, res: Response) {
-    const {id} = req.query;
+    const {id} = req.params;
 
-    console.log("Product ID:", id);
+    if (!id ) {
+        return res.status(400).json({
+            message: "Invalid or missing product ID",
+            status: 400
+        });
+    }
 
     try {
         const products = await getProductById(id);
