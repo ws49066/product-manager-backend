@@ -4,7 +4,6 @@ import connectDB from './config/db.js'
 import routes from './routes/index.js'
 import swaggerUi from 'swagger-ui-express'
 import swaggerJsdoc from 'swagger-jsdoc'
-import { open } from 'fs'
 
 const app = express()
 dotenv.config()
